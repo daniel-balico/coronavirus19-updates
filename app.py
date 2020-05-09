@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, render_template
+from flask import Flask, request, redirect, url_for, render_template, send_from_directory
 from datetime import datetime
 import os
 
@@ -21,6 +21,10 @@ def main():
 
 	return render_template('main.html', 
 		countries=country_list, url_country=get_country, date=date)
+
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 if __name__ == '__main__':
 	app.run()
