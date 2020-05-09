@@ -20,6 +20,8 @@
 		<!-- Site icon -->
 		<link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
 
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sortable-table.css') }}">
+
 		<!-- style -->
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
@@ -89,6 +91,11 @@
 				box-shadow: 5px 2px 19px -14px rgba(0,0,0,0.75);
 			}
 
+			th:hover {
+				cursor: pointer;
+				filter: brightness(70%);
+			}
+
 			/*width 812 */
 
 		</style>
@@ -103,6 +110,7 @@
 		  gtag('config', 'UA-165989811-1');
 		</script>
 
+		<script type="text/javascript" src="{{ url_for('static', filename='js/sortable-tables.js') }}"></script>
 		<!-- Sripts needed for bootstrap -->
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
