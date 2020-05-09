@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, url_for, render_template, send_from_
 from datetime import datetime
 import os
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 
 
 @app.errorhandler(404)
@@ -21,6 +21,10 @@ def main():
 
 	return render_template('main.html', 
 		countries=country_list, url_country=get_country, date=date)
+
+@app.route('/sitemap.xml')
+def site_map():
+	return render_template('sitemap.xml')
 
 if __name__ == '__main__':
 	app.run()
