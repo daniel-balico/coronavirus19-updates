@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Covid-19 Update - 404</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
+
+			.oswald {
+				font-family: 'Oswald', sans-serif;
+			}
+
+			.fw-200 {
+				font-weight: 200;
+			}
+			.fw-300 {
+				font-weight: 300;
+			}
+			.fw-400 {
+				font-weight: 400;
+			}
+			.fw-500 {
+				font-weight: 500;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="text-center">
+			<h1 class="display-4 pt-5">404</h1>
+			<h1 class="text-danger oswald fw-400">Page not found</h1>
+			<p class="">It seems that we can't find the page you were looking for. Click the button below to go to the main page.</p>
+			<a class="btn btn-info" href="{{ url_for('main') }}">Go to the main page</a>
+		</div>
+		
+	</body>
+</html>
