@@ -29,12 +29,9 @@ def table():
 	with urlrequest.urlopen('https://coronavirus-19-api.herokuapp.com/countries') as response:
 		source = response.read()
 		data = json.loads(source)
-	#Read all countries in the text file
-	country_list_file = open('countries.txt', 'r')
-	country_list = country_list_file.readlines()
 	#get current date
 	date = datetime.today().strftime('%Y-%m-%d')
-	return render_template('table.html', countries=country_list, date=date, jsonData=data, table=True)
+	return render_template('table.html', date=date, jsonData=data, table=True)
 
 @app.route('/sitemap.xml')
 def static_from_root():
