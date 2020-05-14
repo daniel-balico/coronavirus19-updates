@@ -8,6 +8,7 @@
 		    <thead class="thead-light">
 		      <tr>
 		      	<th>Country</th>
+		      	<th class="numeric-sort">No.</th>
 		        <th class="numeric-sort">Cases Today</th>
 		        <th class="numeric-sort">Active Cases</th>
 		        <th class="numeric-sort">Recovered</th>
@@ -23,6 +24,7 @@
 		    <tbody jput="tbody">
 		      {% for x in jsonData %}
 			      <tr class="item">
+			      	<td>{{ x }}</td>
 			        <td>{{ x['country'] }}</td>
 			        <td class="text-warning">{{ '{:,}'.format(x['todayCases']) }}</td>
 			        <td class="text-warning">{{ '{:,}'.format(x['active']) }}</td>
