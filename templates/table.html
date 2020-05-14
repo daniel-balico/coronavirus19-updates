@@ -22,10 +22,10 @@
 		      </tr>
 		    </thead>
 		    <tbody jput="tbody">
+
 		      {% for x in jsonData %}
 			      <tr class="item">
-			      	{% no = no + 1 %}
-			      	<td>{{ no }}</td>
+			      	<td>{{ loop.index }}</td>
 			        <td>{{ x['country'] }}</td>
 			        <td class="text-warning">{{ '{:,}'.format(x['todayCases']) }}</td>
 			        <td class="text-warning">{{ '{:,}'.format(x['active']) }}</td>

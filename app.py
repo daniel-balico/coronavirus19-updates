@@ -30,10 +30,9 @@ def table():
 		source = response.read()
 		data = json.loads(source)
 
-	no = 1
 	#get current date
 	date = datetime.today().strftime('%Y-%m-%d')
-	return render_template('table.html', date=date, jsonData=data, table=True, no=no)
+	return render_template('table.html', date=date, jsonData=data, table=True)
 
 @app.route('/sitemap.xml')
 def static_from_root():
