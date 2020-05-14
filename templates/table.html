@@ -24,15 +24,19 @@
 		      {% for x in jsonData %}
 			      <tr class="item">
 			        <td>{{ x['country'] }}</td>
-			        <td class="text-warning">{{ x['todayCases'] }}</td>
-			        <td class="text-warning">{{ x['active'] }}</td>
-			        <td class="text-success">{{ x['recovered'] }}</td>
-			        <td>{{ x['todayDeaths'] }}</td>
-			        <td>{{ x['deaths'] }}</td>
-			        <td class="text-danger">{{ x['critical'] }}</td>
-			        <td>{{ x['casesPerOneMillion'] }}</td>
-			        <td>{{ x['deathsPerOneMillion'] }}</td>
-			        <td class="text-danger">{{ x['cases'] }}</td>
+			        <td class="text-warning">{{ '{:,}'.format(x['todayCases']) }}</td>
+			        <td class="text-warning">{{ '{:,}'.format(x['active']) }}</td>
+			        {% if x['recovered'] != None %}
+			        <td class="text-success">{{'{:,}'.format(x['recovered']) }}</td>
+			        {% else %}
+			        <td class="text-success">0</td>
+			        {% endif %}
+			        <td>{{ '{:,}'.format(x['todayDeaths']) }}</td>
+			        <td>{{ '{:,}'.format(x['deaths']) }}</td>
+			        <td class="text-danger">{{ '{:,}'.format(x['critical']) }}</td>
+			        <td>{{ '{:,}'.format(x['casesPerOneMillion']) }}</td>
+			        <td>{{ '{:,}'.format(x['deathsPerOneMillion']) }}</td>
+			        <td class="text-danger">{{ '{:,}'.format(x['cases']) }}</td>
 			      </tr>
 		      {% endfor %}
 		    </tbody>

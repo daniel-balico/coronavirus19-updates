@@ -91,18 +91,25 @@
 	<!-- I might convert this to python -->
 	<!-- script for displaying the datas -->
 	<script type="text/javascript">
+
+		$.fn.digits = function(){ 
+		    return this.each(function(){ 
+		        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+		    })
+		}
+
 		$(document).ready(function () {
             function getWorldCovidCases() {
                 $.get("https://coronavirus-19-api.herokuapp.com/countries/{{ url_country }}", function (data) {
-                    $("#totalCaseCounter").html(data.cases);
-                    $("#caseTodayCounter").html(data.todayCases);
-                    $("#deathCounter").html(data.deaths)
-                    $("#todayDeathsCounter").html(data.todayDeaths)
-                    $("#recoveredCounter").html(data.recovered)
-                    $("#activeCasesCounter").html(data.active)
-                    $("#criticalCounter").html(data.critical);
-                    $("#casesPerOneMillion").html(data.casesPerOneMillion);
-                    $("#deathsPerOneMillion").html(data.deathsPerOneMillion);
+                    $("#totalCaseCounter").html(data.cases).digits();
+                    $("#caseTodayCounter").html(data.todayCases).digits();
+                    $("#deathCounter").html(data.deaths).digits();
+                    $("#todayDeathsCounter").html(data.todayDeaths).digits();
+                    $("#recoveredCounter").html(data.recovered).digits();
+                    $("#activeCasesCounter").html(data.active).digits();
+                    $("#criticalCounter").html(data.critical).digits();
+                    $("#casesPerOneMillion").html(data.casesPerOneMillion).digits();
+                    $("#deathsPerOneMillion").html(data.deathsPerOneMillion).digits();
 
                     setTimeout(function () {
                         getPhilippineCovidCase();

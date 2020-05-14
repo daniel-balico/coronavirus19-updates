@@ -29,6 +29,7 @@ def table():
 	with urlrequest.urlopen('https://coronavirus-19-api.herokuapp.com/countries') as response:
 		source = response.read()
 		data = json.loads(source)
+
 	#get current date
 	date = datetime.today().strftime('%Y-%m-%d')
 	return render_template('table.html', date=date, jsonData=data, table=True)
@@ -38,4 +39,4 @@ def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
