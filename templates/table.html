@@ -28,7 +28,11 @@
 			      	<td>{{ loop.index }}</td>
 			        <td>{{ x['country'] }}</td>
 			        <td class="text-warning">{{ '{:,}'.format(x['todayCases']) }}</td>
+			        {% if x['active'] != None %}
 			        <td class="text-warning">{{ '{:,}'.format(x['active']) }}</td>
+			        {% else %}
+			        <td class="text-warning">0</td>
+			        {% endif %}
 			        {% if x['recovered'] != None %}
 			        <td class="text-success">{{'{:,}'.format(x['recovered']) }}</td>
 			        {% else %}
