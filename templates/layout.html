@@ -96,7 +96,7 @@
 				filter: brightness(70%);
 			}
 
-			/* create media query here width 812 */
+			/* create a media query here width 812 */
 
 		</style>
 
@@ -110,7 +110,9 @@
 		  gtag('config', 'UA-165989811-1');
 		</script>
 
+		<!-- Sortable Table script -->
 		<script type="text/javascript" src="{{ url_for('static', filename='js/sortable-tables.js') }}"></script>
+
 		<!-- Sripts needed for bootstrap -->
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -146,6 +148,7 @@
 		{% block content %}
 		{% endblock content %}
 
+		<!-- Particle JS -->
 		<script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
@@ -156,5 +159,5 @@
 		<div class="text-center"><small class="text-muted">Made by Daniel Shan Balico 2020 | <a href="https://www.paypal.me/DBalico">Buy me a coffee</a></small></div>
 	</footer>
 
-	<!-- heroku api https://coronavirus-19-api.herokuapp.com/countries -->
+	<!-- Heroku API: https://coronavirus-19-api.herokuapp.com/countries -->
 </html>

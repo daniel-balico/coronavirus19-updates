@@ -26,6 +26,7 @@ def main():
 
 @app.route('/tableview')
 def table():
+	# get API Data
 	with urlrequest.urlopen('https://coronavirus-19-api.herokuapp.com/countries') as response:
 		source = response.read()
 		data = json.loads(source)
