@@ -52,25 +52,38 @@
 				<span class="text-danger oswald">COVID-19 UPDATES </span><small class="text-muted oswald fw-200 ltr-space">all over the world</small>
 			</div>
 
-			<!-- navbar items -->
-			<ul class="navbar-nav ml-auto">
-				{% if table %}
-				<li class="nav-item mr-3">
-		    		<a class="mb-0 oswald fw-200 " href="{{ url_for('main') }}"><i class="material-icons text-danger">chevron_left</i></a>
-		    	</li>
-		    	{% else %}
-		    	<li class="nav-item mr-2">
-		    		<a class="mb-0 oswald fw-200 text-danger" href="{{ url_for('table') }}"><i class="material-icons">web</i></a>
-		    	</li>
-		    	{% endif %}
-		    	<li class="nav-item">
-		    		<a type="button" class="mr-3"><li class="material-icons dark-mode">brightness_7</li></a>
-		    	</li>
+			<!-- Toggler/collapsibe Button -->
+			<button class="navbar-toggler bg-border-none" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<i class="material-icons text-danger f-size-30">menu</i>
+			</button>
 
-				<li class="nav-item">
-		    		<p class="mb-0 oswald fw-300">{{ date }}</p>
-		    	</li>
-			</ul>
+			<!-- navbar items -->
+			<div class="collapse navbar-collapse mt-3" id="collapsibleNavbar">
+				<ul class="navbar-nav ml-auto text-center">
+					{% if table %}
+					<li class="nav-item mr-3">
+			    		<a class="mb-0 oswald fw-200 " href="{{ url_for('main') }}">
+			    			<i class="material-icons text-danger">chevron_left</i>
+			    		</a>
+			    	</li>
+			    	{% else %}
+			    	<li class="nav-item">
+			    		<a class="mb-0 oswald fw-200 text-danger mr-3" href="{{ url_for('table') }}">
+			    			<i class="material-icons">web</i>
+			    		</a>
+			    	</li>
+			    	{% endif %}
+
+			    	<li class="nav-item">
+			    		<a type="button" class="mr-3">
+			    			<i class="material-icons dark-mode">brightness_7</i>
+			    		</a>
+			    	</li>
+			    	<li class="nav-item">
+			    		<p class="m-0">{{ date }}</p>
+			    	</li>
+				</ul>
+			</div>
 		</nav>
 
 		<!-- Content -->

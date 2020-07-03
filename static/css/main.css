@@ -21,6 +21,10 @@
 	letter-spacing: 1px;
 }
 
+.f-size-30 {
+	font-size: 30px;
+}
+
 .f-size-40 {
 	font-size: 40px;
 }
@@ -76,4 +80,17 @@ th:hover {
 
 .dark-mode:hover {
 	filter: brightness(50%);
+}
+
+.bg-border-none {
+	background: none !important;
+	border: none !important;
+}
+
+@media only screen and (max-width: 575px) {
+	li {
+		margin-right: 0 !important;
+		padding: 10px;
+		border: solid #292b2c 1px;
+	}
 }
