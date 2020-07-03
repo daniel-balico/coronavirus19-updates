@@ -1,11 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-	
 	<div class="container-fluid table-responsive">
 	<div style="z-index: -1; position: fixed" id="particles-js"></div>	
 		<table class="table table-bordered mt-3 sortable-table" id="covidTable">
-		    <thead class="thead-light">
+		    <thead>
 		      <tr>
 		      	<th class="numeric-sort">No.</th>
 		      	<th>Country</th>
@@ -48,5 +47,4 @@
 		    </tbody>
 	  	</table>
 	</div>
-
 {% endblock content %}

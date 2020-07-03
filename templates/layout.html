@@ -46,7 +46,7 @@
 
 	<body>
 		<!-- navbar -->
-		<nav class="navbar navbar-expand-sm bg-light navbar-light">
+		<nav class="navbar navbar-expand-sm navbar-light">
 			<!-- navbar brand -->
 			<div class="navbar-brand">
 				<span class="text-danger oswald">COVID-19 UPDATES </span><small class="text-muted oswald fw-200 ltr-space">all over the world</small>
@@ -56,15 +56,19 @@
 			<ul class="navbar-nav ml-auto">
 				{% if table %}
 				<li class="nav-item mr-3">
-		    		<a class="mb-0 oswald fw-200 " href="{{ url_for('main') }}">Back to default</a>
+		    		<a class="mb-0 oswald fw-200 " href="{{ url_for('main') }}"><i class="material-icons text-danger">chevron_left</i></a>
 		    	</li>
 		    	{% else %}
-		    	<li class="nav-item mr-3">
-		    		<a class="mb-0 oswald fw-200" href="{{ url_for('table') }}">Switch to Table View</a>
+		    	<li class="nav-item mr-2">
+		    		<a class="mb-0 oswald fw-200 text-danger" href="{{ url_for('table') }}"><i class="material-icons">web</i></a>
 		    	</li>
 		    	{% endif %}
+		    	<li class="nav-item">
+		    		<a type="button" class="mr-3"><li class="material-icons dark-mode">brightness_7</li></a>
+		    	</li>
+
 				<li class="nav-item">
-		    		<p class="mb-0 oswald fw-200">{{ date }}</p>
+		    		<p class="mb-0 oswald fw-300">{{ date }}</p>
 		    	</li>
 			</ul>
 		</nav>
@@ -76,6 +80,59 @@
 		<!-- Particle JS -->
 		<script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+		<script type="text/javascript">
+			let darkMode = localStorage.getItem("darkMode");
+		
+			darkModeButton = document.querySelector(".dark-mode");
+			navbar = document.querySelector("nav");
+			body = document.querySelector("body");
+			particles = document.querySelector("#particles-js");
+			cards = document.querySelectorAll(".card");
+
+			const enableDarkMode = () => {
+				darkModeButton.style.color = "white";
+				navbar.style.background = "#171717";
+				body.style.background = "#171717";
+				body.style.color = "white";
+				particles.style.background = "#171717";
+
+				for(var x = 0 ; x < cards.length ; x++) {
+					cards[x].classList.add("bg-dark");
+				}
+
+				localStorage.setItem("darkMode", "enabled");
+			}
+
+			const disabledDarkMode = () => {
+				darkModeButton.style.color = "#292b2c";
+				navbar.style.background = "white";
+				body.style.background = "white";
+				body.style.color = "#292b2c";
+				particles.style.background = "white";
+		
+				for(var x = 0 ; x < cards.length ; x++) {
+					cards[x].classList.remove("bg-dark");
+				}
+
+				localStorage.setItem("darkMode", null);
+			}
+
+			if (darkMode === "enabled") {
+				enableDarkMode();
+			}
+
+			darkModeButton.addEventListener("click", function(e) {
+				darkMode = localStorage.getItem("darkMode");
+				if (darkMode !== "enabled") {
+					enableDarkMode();
+				}
+				else {
+					disabledDarkMode()
+				}
+			});
+
+		</script>
 
 	</body>
 

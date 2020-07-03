@@ -69,3 +69,11 @@ th:hover {
 	cursor: pointer;
 	filter: brightness(70%);
 }
+
+.dark-mode {
+	cursor: pointer;
+}
+
+.dark-mode:hover {
+	filter: brightness(50%);
+}
