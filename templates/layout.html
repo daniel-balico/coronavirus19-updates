@@ -61,8 +61,8 @@
 			<div class="collapse navbar-collapse mt-3" id="collapsibleNavbar">
 				<ul class="navbar-nav ml-auto text-center">
 					{% if table %}
-					<li class="nav-item mr-3">
-			    		<a class="mb-0 oswald fw-200 " href="{{ url_for('main') }}">
+					<li class="nav-item">
+			    		<a class="mb-0 oswald fw-200  mr-3" href="{{ url_for('main') }}">
 			    			<i class="material-icons text-danger">chevron_left</i>
 			    		</a>
 			    	</li>
@@ -97,11 +97,11 @@
 		<script type="text/javascript">
 			let darkMode = localStorage.getItem("darkMode");
 		
-			darkModeButton = document.querySelector(".dark-mode");
-			navbar = document.querySelector("nav");
-			body = document.querySelector("body");
-			particles = document.querySelector("#particles-js");
-			cards = document.querySelectorAll(".card");
+			const darkModeButton = document.querySelector(".dark-mode");
+			const navbar = document.querySelector("nav");
+			const body = document.querySelector("body");
+			const particles = document.querySelector("#particles-js");
+			const cards = document.querySelectorAll(".card");
 
 			const enableDarkMode = () => {
 				darkModeButton.style.color = "white";
@@ -113,6 +113,7 @@
 				for(var x = 0 ; x < cards.length ; x++) {
 					cards[x].classList.add("bg-dark");
 				}
+
 
 				localStorage.setItem("darkMode", "enabled");
 			}
