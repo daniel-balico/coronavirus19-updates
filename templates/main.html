@@ -10,10 +10,8 @@
 			<p class="text-center pt-3 mb-0"><small class="text-muted">Currently in:</small></p>
 			<a class="mb-0 p-0 dropdown-btn text-primary" data-toggle='dropdown'><i class="material-icons">expand_more</i></a>
 			<div class="dropdown-menu dd-h">
-				<a class="dropdown-item" href="?country=World">World</a>
-				<div class="dropdown-divider"></div>
-			    {% for drop_country in countries %}
-			    <a class="dropdown-item" href="?country={{ drop_country }}">{{ drop_country }}</a>
+			    {% for data in countries %}
+			    <a class="dropdown-item" href="?country={{ data['country'] }}">{{ data['country'] }}</a>
 			    {% endfor %}
 			</div>
 		</div>

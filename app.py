@@ -13,16 +13,20 @@ def page_not_found(e):
 
 @app.route('/')
 def main():
-	#Read all countries in the text file
-	country_list_file = open('countries.txt', 'r')
-	country_list = country_list_file.readlines()
+
+	# get API Data
+	with urlrequest.urlopen('https://coronavirus-19-api.herokuapp.com/countries') as response:
+		source = response.read()
+		data = json.loads(source)
+
 	#Get the current country in the url parameter
 	get_country = request.args.get('country', default='World')
+
 	#get current date
 	date = datetime.today().strftime('%Y-%m-%d')
 
 	return render_template('main.html', 
-		countries=country_list, url_country=get_country, date=date)
+		countries=data, url_country=get_country, date=date)
 
 @app.route('/tableview')
 def table():
